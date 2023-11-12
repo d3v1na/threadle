@@ -1,0 +1,35 @@
+#given adjacency matrix perform dfs and bfs
+
+adjacency_matrix = [[0,1,1,1,0,0],
+                    [1,0,1,0,1,0],
+                    [1,1,0,0,1,0],
+                    [1,0,0,0,0,0],
+                    [0,1,1,0,0,1],
+                    [0,0,0,0,1,0]]
+
+def dfs(adjacency_matrix, start):
+    visited = []
+    stack = [start]
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            visited.append(vertex)
+            for i in range(len(adjacency_matrix[vertex])):
+                if adjacency_matrix[vertex][i] == 1:
+                    stack.append(i)
+    return visited
+
+def bfs(adjacency_matrix, start):
+    visited = []
+    queue = [start]
+    while queue:
+        vertex = queue.pop(0)
+        if vertex not in visited:
+            visited.append(vertex)
+            for i in range(len(adjacency_matrix[vertex])):
+                if adjacency_matrix[vertex][i] == 1:
+                    queue.append(i)
+    return visited
+
+print("dfs: ",dfs(adjacency_matrix, 0))
+print("bfs: ",bfs(adjacency_matrix, 0))

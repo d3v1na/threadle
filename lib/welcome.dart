@@ -34,19 +34,23 @@ class Welcome extends StatelessWidget {
             width: 240,
           ),
           OutlinedButton(
-            onPressed: () {}, 
+            onPressed: () {},
             style: OutlinedButton.styleFrom(
               foregroundColor: const Color(0xff000000),
               backgroundColor: const Color(0xffFFFFFF),
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+              ),
             ),
-            child: const Text(
+            child: Text(
               'Get Started',
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
+                //font
               ),
-              ),
+            ),
           )
         ],
       ),
